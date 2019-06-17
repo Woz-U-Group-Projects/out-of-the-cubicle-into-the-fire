@@ -1,0 +1,31 @@
+nav {
+  background: #7700ff;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+nav {
+  float: right;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  float: left;
+}
+
+a {
+  padding: 1.5em;
+  text-transform: uppercase;
+  font-size: .8em;
+}
+
+:hover {
+  background-color: #8e2bff;
+}
