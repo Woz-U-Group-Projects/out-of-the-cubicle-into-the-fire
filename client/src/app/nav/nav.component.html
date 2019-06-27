@@ -1,10 +1,14 @@
-
-  <div>
-    <a routerLink="/" class="logo">Speedy</a>
-  </div>
+<header>
+  <div class="nav-area">
+  <img src="" alt="logo" class="logo">
   <nav>
-    <li><a class="btn" routerLink="home" routerLinkActive="active">Home</a></li>
-    <li><a class="btn" routerLink="/about" routerLinkActive="active">About</a></li>
-    <li><a class="btn" routerLink="/login" routerLinkActive="active">Login/Register</a></li>
-    <li><a class="btn" routerLink="/profile" routerLinkActive="active">Profile</a></li>
+    <ul>
+      <li><a routerLink="" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="login" routerLinkActive="active">Login</a></li>
+      <li><a [routerLink]="['/register']" routerLinkActive="active">Register</a></li>
+      <li><a routerLink="profile" routerLinkActive="active">Profile</a></li>
+    </ul>
   </nav>
+  </div>
+</header>

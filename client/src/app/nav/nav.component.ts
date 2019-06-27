@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  appTitle: String = 'Speedy';
-  
   constructor() { }
 
   ngOnInit() {
