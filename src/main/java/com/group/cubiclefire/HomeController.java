@@ -17,8 +17,8 @@ public class HomeController {
 	private MySQLUserDetailsService userService;
 
 	@GetMapping("/")
-	public String getHome() {
-		return "home";
+	public String getIndex() {
+		return "index";
 	}
 
 	@GetMapping("/register")
