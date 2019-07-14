@@ -5,7 +5,6 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
-import { GetRequestComponent } from './fetch.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -16,7 +15,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GetRequestComponent],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
