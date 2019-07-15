@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+<<<<<<< HEAD
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -24,16 +25,27 @@ export function getAuthHttp(Http) {
     tokenName: 'token'
   }), Http);
 }
+=======
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { GetRequestComponent } from './fetch.component';
+>>>>>>> ba3caab15df61a44ebbc4346847cdcef0d554de7
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+<<<<<<< HEAD
     SignupComponent,
     AdminComponent,
     HomeComponent,
     NotFoundComponent,
     NoAccessComponent
+=======
+    RegisterComponent,
+    ProfileComponent,
+    GetRequestComponent
+>>>>>>> ba3caab15df61a44ebbc4346847cdcef0d554de7
   ],
   imports: [
     BrowserModule,

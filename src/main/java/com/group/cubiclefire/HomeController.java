@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 	
-	//@Autowired
-	//private UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 	
-	//@Autowired
-	//private MySQLUserDetailsService userService;
+	@Autowired
+	private MySQLUserDetailsService userService;
 
 	@GetMapping("/")
-	public String getHome() {
-		return "home";
+	public String getIndex() {
+		return "index";
 	}
 
 	@GetMapping("/register")
@@ -41,19 +41,20 @@ public class HomeController {
 		return "profile";
 	}
 	
-	//@PostMapping("/register")
-	//public String createUser(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
-		//User foundUser = userRepository.findByUsername(username);
-		//if (foundUser == null) {
-			//User newUser = new User();
-			//newUser.setUsername(username);
-			//newUser.setPassword(password);
-			//userService.Save(newUser);
-			//return "login";
-		//}
-		//else {
-			//model.addAttribute("exists", true);
-			//return "signup";
-		//}
-	//}
+	@PostMapping("/register")
+	public String createUser(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("email") String email, Model model) {
+		User foundUser = userRepository.findByUsername(username);
+		if (foundUser == null) {
+			User newUser = new User();
+			newUser.setUsername(username);
+			newUser.setPassword(password);
+			newUser.setEmail(email);
+			userService.Save(newUser);
+			return "login";
+		}
+		else {
+			model.addAttribute("exists", true);
+			return "signup";
+		}
+	}
 }
