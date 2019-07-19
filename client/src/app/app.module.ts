@@ -2,6 +2,7 @@ import { AuthServiceService } from './auth-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
-import { GetRequestComponent } from './fetch.component';
+
+
 
 
 @NgModule({
@@ -22,12 +24,12 @@ import { GetRequestComponent } from './fetch.component';
     AboutComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent,
-    GetRequestComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule],
   providers: [AuthServiceService],
   bootstrap: [AppComponent]

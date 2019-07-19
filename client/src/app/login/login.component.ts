@@ -11,7 +11,7 @@ import { from } from 'rxjs';
 export class LoginComponent implements OnInit {
 
 
-  userData = {};
+  loginUserData = {};
   constructor(
     private auth: AuthServiceService,
     private router: Router
@@ -21,14 +21,14 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    this.auth.loginUser(this.userData);
+    this.auth.loginUser(this.loginUserData)
     .subscribe(
       res => {
-        localStorage.getItem('token', res.token)
+        localStorage.setItem('token', res.token);
         this.router.navigate(['/profile'])
-      }
-      err => console.log(err);
-    )
+      },
+      err => console.log(err)
+    );
   }
 
 }

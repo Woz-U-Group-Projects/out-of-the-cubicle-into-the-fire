@@ -8,7 +8,9 @@
         class="form-control"
         placeholder="Enter Username"
         id="user"
-      />
+        [(ngModel)]="loginUserData.username"
+        name="username"
+      required/>
     </div>
     <div class="form-group">
       <label for="pwd">Password</label>
@@ -17,9 +19,11 @@
         class="form-control"
         placeholder="Enter Password"
         id="pwd"
-      />
+        [(ngModel)]="loginUserData.password"
+        name="password"
+      required/>
     </div>
-    <button type="submit" class="btn">Login</button>
+    <button (click)= 'loginUser()' type="button" class="btn">Login</button>
     <h6>Don't have an account? <a routerLink="/register">Sign up </a>here.</h6>
   </form>
 </div>

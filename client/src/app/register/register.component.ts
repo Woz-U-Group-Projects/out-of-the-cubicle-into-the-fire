@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  userData = {};
+  registerUserData = {};
   constructor(
     private auth: AuthServiceService,
     private router: Router
@@ -18,15 +18,15 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  loginUser() {
-    this.auth.loginUser(this.userData);
+  registerUser() {
+    this.auth.loginUser(this.registerUserData)
     .subscribe(
       res => {
-        localStorage.getItem('token', res.token)
-        this.router.navigate(['/profile'])
-      }
-      err => console.log(err);
-    )
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['/profile']);
+      },
+      err => console.log(err)
+    );
   }
 
 }
