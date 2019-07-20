@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthServiceService {
 
-  private registerUrl = '/api/register';
-  private loginUrl = '/api/login';
+  private registerUrl = 'http://localhost:3000/api/register';
+  private loginUrl = 'http://localhost:3000/api/login';
 
   constructor(private http: HttpClient) {
     // ...
