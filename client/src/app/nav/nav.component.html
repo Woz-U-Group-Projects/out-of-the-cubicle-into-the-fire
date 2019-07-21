@@ -5,9 +5,10 @@
     <ul>
       <li><a routerLink="" routerLinkActive="active">Home</a></li>
       <li><a routerLink="about" routerLinkActive="active">About</a></li>
-      <li><a routerLink="login" routerLinkActive="active">Login</a></li>
-      <li><a [routerLink]="['/register']" routerLinkActive="active">Sign up</a></li>
-      <li><a routerLink="profile" routerLinkActive="active">Profile</a></li>
+      <li><a routerLink="login" routerLinkActive="active" *ngIf="!authService.loggedIn()">Login</a></li>
+      <li><a [routerLink]="['/register']" routerLinkActive="active" *ngIf="!authService.loggedIn()">Sign up</a></li>
+      <li><a [routerLink]="['/logout']" routerLinkActive="active" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
+      <li><a routerLink="profile" routerLinkActive="active" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Profile</a></li>
     </ul>
   </nav>
   </div>

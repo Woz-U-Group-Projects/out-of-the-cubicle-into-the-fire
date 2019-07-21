@@ -1,14 +1,17 @@
 <div class="loginbox">
   <h1>Login Here</h1>
   <form action="">
+    <div *ngIf="err" class="alert alert-danger">
+      Invalid email / or password
+    </div>
     <div class="form-group">
-      <label for="username">Username</label>
+      <label for="username">Email</label>
       <input
         type="text"
         class="form-control"
-        placeholder="Enter Username"
+        placeholder="Enter Email@email.com"
         id="user"
-        [(ngModel)]="loginUserData.username"
+        [(ngModel)]="loginUserData.email"
         name="username"
       required/>
     </div>
